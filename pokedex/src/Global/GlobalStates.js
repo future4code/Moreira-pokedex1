@@ -3,6 +3,8 @@ import axios from "axios";
 import GlobalStateContext from "./GlobalStateContext"
 const GlobalState = (props) => {
     const [pokemons, setPokemons] = useState([])
+    const [pokedex, setPokedex] = useState([])
+    const [lista, setLista] = useState([])
     const [loading, setLoading] = useState(true);
     useEffect(() => {
            axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20`)
@@ -31,8 +33,10 @@ const GlobalState = (props) => {
         );
         setPokemons(loadingPokemon);
     }
+
+   
     return (
-        <GlobalStateContext.Provider value={pokemons}>
+        <GlobalStateContext.Provider value={{pokemons, pokedex, lista, setLista, setPokemons, setPokedex}}>
             {props.children}
         </GlobalStateContext.Provider>
     )
