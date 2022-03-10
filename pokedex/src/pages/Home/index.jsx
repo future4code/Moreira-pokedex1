@@ -21,12 +21,25 @@ export default function Home(){
     }
 
     const onClickAdd = ((poke)=>{
-        const novaLista = pokemons.filter(item=>{
-            return item !== poke
+    
+        const novaLista = pokemons.filter(item=>{        
+             return item.name == poke            
         })
-        setPokemons([poke, ...lista.pokemons])
-        setLista(novaLista)
+     
+        const index = lista.findIndex((i)=>{
+            return i.name === poke
+        })
+    
+        if(index === -1){
+            const listaPokes = lista
+            listaPokes.push(novaLista[0])
+            setLista(listaPokes)
+        }else {
+            alert("Pokemon já adicionado a lista")
+        }
+    
     })
+
 
 
     return (
@@ -38,7 +51,7 @@ export default function Home(){
              <> 
              <p>{list.name}</p>
              <img src={list.image} alt={list.name} style={{width: '10%'}}/>
-             <button onClick={()=>onClickAdd(list)} >Adicionar</button>
+             <button onClick={()=>onClickAdd(list.name)} >Adicionar</button>
              <button key={list.id} onClick={()=>onClickPokemon(list.name)}>Detalhes</button>
              </>
             ))}
