@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import HeaderHome from "../../components/HeaderHome";
 import useRequestData from '../../hooks/useRequestData';
@@ -7,8 +7,9 @@ import GlobalStateContext from "../../Global/GlobalStateContext";
 
 export default function Home(){
 
-    const {pokemons, pokedex, lista, setLista, setPokemons, setPokedex}
+    const {pokemons, pokedex, lista, paginacao, setPaginacao, setLista, setPokemons, setPokedex}
     =useContext(GlobalStateContext)
+
     
     const navigate = useNavigate()
 
@@ -55,6 +56,12 @@ export default function Home(){
              <button key={list.id} onClick={()=>onClickPokemon(list.name)}>Detalhes</button>
              </>
             ))}
+
+
+            <button onClick={()=>setPaginacao(paginacao>5? paginacao-5 : paginacao)}>Página anterior</button>
+            
+            <button onClick={()=>setPaginacao(paginacao + 5)}>Próxima página</button>
+
         </div>
         
     )

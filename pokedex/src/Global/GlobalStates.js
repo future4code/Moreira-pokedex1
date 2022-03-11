@@ -5,9 +5,11 @@ const GlobalState = (props) => {
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
     const [lista, setLista] = useState([])
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true)
+    const [paginacao, setPaginacao] = useState(1) //mudar páginas
+
     useEffect(() => {
-           axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20`)
+           axios.get(`https://pokeapi.co/api/v2/pokemon?limit=5&offset=${paginacao}`)
            .then(response =>
             pokemonData(response.data.results),
             )
@@ -15,7 +17,7 @@ const GlobalState = (props) => {
                 console.log(error.response.message)
             })
             setLoading(false)
-    }, []);
+    }, [paginacao]);
     const pokemonData = async (data) => {
         const loadingPokemon = await Promise.all(
             data.map(async(pokemon) => {
@@ -36,7 +38,7 @@ const GlobalState = (props) => {
 
    
     return (
-        <GlobalStateContext.Provider value={{pokemons, pokedex, lista, setLista, setPokemons, setPokedex}}>
+        <GlobalStateContext.Provider value={{pokemons, pokedex, lista, paginacao, setPaginacao, setLista, setPokemons, setPokedex}}>
             {props.children}
         </GlobalStateContext.Provider>
     )
