@@ -9,7 +9,7 @@ const GlobalState = (props) => {
     const [paginacao, setPaginacao] = useState(0) //mudar páginas
 
     useEffect(() => {
-           axios.get(`https://pokeapi.co/api/v2/pokemon?limit=5&offset=${paginacao}`)
+           axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${paginacao}`)
            .then(response =>
             pokemonData(response.data.results),
             )

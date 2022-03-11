@@ -13,6 +13,9 @@ const Pokedex = () => {
             return poke.name !== RemovePoke.name
         })
         setLista(novaLista)
+
+        const retornaPokemon = [RemovePoke, ...pokemons]
+        setPokemons(retornaPokemon)
     })
 
     const navigate = useNavigate()
