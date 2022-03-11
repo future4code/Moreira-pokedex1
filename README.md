@@ -9,11 +9,12 @@ Nome dos integrantes:
 Link do Surge: www.known-prison.surge.sh
 
 O que funciona:
-Renderização dos 20 primeiros pokemons na tela Home;
-Botão de adicionar;
-Botão de detalhes
-Troca de páginas;
-Renderização na tela de detalhes da imagem, moves e type do pokemon;
+
+- Renderização dos 20 primeiros pokemons na tela Home;
+- Botão de adicionar;
+- Botão de detalhes
+- Troca de páginas;
+- Renderização na tela de detalhes da imagem, moves e type do pokemon;
 
 HOME
 ![image](https://user-images.githubusercontent.com/94688135/157960748-a27c677a-4d8b-4c96-ac23-d96ddc4ee5f1.png)
