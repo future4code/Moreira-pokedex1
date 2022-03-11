@@ -4,6 +4,9 @@ import HeaderHome from "../../components/HeaderHome";
 import useRequestData from '../../hooks/useRequestData';
 import {BASE_URL} from '../../constants/BASE_URL';
 import GlobalStateContext from "../../Global/GlobalStateContext";
+import {PageHome, DivButton, Div, Button, DivPokemon, FotoPokemon, DivButtonPokemon, DivContainer, ButtonPagina} from './styled';
+import {BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill} from 'react-icons/bs';
+
 
 export default function Home(){
 
@@ -31,8 +34,11 @@ export default function Home(){
             const listaPokes = lista
             listaPokes.push(poke)
             setLista(listaPokes)
-        }else {
-            alert("Pokemon já adicionado a lista")
+
+            const novaLista = pokemons.filter((removePoke)=>{ //removendo da home
+              return removePoke.name !== poke.name
+          })
+          setPokemons(novaLista)
         }
     
     })
@@ -40,25 +46,32 @@ export default function Home(){
 
 
     return (
-        <div>
-            <h1>Página Home</h1>
-            <HeaderHome />
-            
-            {pokemons.map (list =>(
-                <div key={list.name}> 
-                    <p>{list.name}</p>
-                    <img src={list.image} alt={list.name} style={{width: '10%'}}/>
-                    <button onClick={()=>onClickAdd(list)} >Adicionar</button>
-                    <button key={list.id} onClick={()=>onClickPokemon(list.name)}>Detalhes</button>
-                </div>
-            ))}
+      <div>
+        <HeaderHome />
+        <DivContainer>
+                <Div>
+                    {pokemons.map (list =>(
+                    <DivPokemon key={list.name}> 
+                            <p className="nome">{list.name}</p>
+                            <FotoPokemon src={list.image} alt={list.name}/>
+                            <DivButton>
 
+                            <DivButtonPokemon><Button onClick={()=>onClickAdd(list)} >Adicionar</Button></DivButtonPokemon>
 
-            <button onClick={()=>setPaginacao(paginacao>=5? paginacao-5 : paginacao)}>Página anterior</button>
-            
-            <button onClick={()=>setPaginacao(paginacao + 5)}>Próxima página</button>
+                            <DivButtonPokemon><Button key={list.id} onClick={()=>onClickPokemon(list.name)}>Detalhes</Button></DivButtonPokemon>
 
-        </div>
+                            </DivButton>
+                    </DivPokemon>
+                    ))}
+
+                </Div>
+            <DivButton>
+                <ButtonPagina onClick={()=>setPaginacao(paginacao>=21? paginacao-21 : paginacao)}><BsFillArrowLeftCircleFill className="iconHome"/></ButtonPagina>
+                
+                <ButtonPagina onClick={()=>setPaginacao(paginacao + 21)}><BsFillArrowRightCircleFill className="iconHome"/></ButtonPagina>
+            </DivButton>
+            </DivContainer>
+      </div>
         
     )
 }
