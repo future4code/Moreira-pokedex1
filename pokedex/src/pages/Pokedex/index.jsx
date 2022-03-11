@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import HeaderPokedex from "../../components/HeaderPokedex";
 import GlobalStateContext from "../../Global/GlobalStateContext";
 import { Link, useNavigate } from "react-router-dom";
+import {PageHome, DivButton, Div, Button, DivPokemon, FotoPokemon, DivButtonPokemon, DivContainer, ButtonPagina} from './styled';
 
 const Pokedex = () => {
     const {pokemons, pokedex, lista, setLista, setPokemons, setPokedex}
@@ -31,20 +32,29 @@ const Pokedex = () => {
 
     return (
         <div>
-            <h1>Página Pokedex, falta botão detalhes</h1>
-            <HeaderPokedex/>
-            
-            {lista.map (list =>(
-                <div key={list.name}> 
-                    <p>{list.name}</p>
-                    <img src={list.image} alt={list.name} style={{width: '10%'}}/>
-                    {/* <button key={list.id} onClick={()=>onClickPokemon(list.name)}>Detalhes</button> */}
-                    <button onClick={()=>onClickRemover(list)} >Remover</button>
-                    <button key={list.id} onClick={()=>onClickPokemon(list.name)}>Detalhes</button>
-                </div>
-            ))}
+          <HeaderPokedex />
+          <DivContainer>
+                  <Div>
+                      {lista.map (list =>(
+                      <DivPokemon key={list.name}> 
+                              <p className="nome">{list.name}</p>
+                              <FotoPokemon src={list.image} alt={list.name}/>
+                              <DivButton>
+  
+                              <DivButtonPokemon><Button onClick={()=>onClickRemover(list)} >Remover</Button></DivButtonPokemon>
+  
+                              <DivButtonPokemon><Button key={list.id} onClick={()=>onClickPokemon(list.name)}>Detalhes</Button></DivButtonPokemon>
+  
+                              </DivButton>
+                      </DivPokemon>
+                      ))}
+  
+                  </Div>
+              </DivContainer>
         </div>
-    )
-}
+          
+      )
+  }
+  
 
 export default Pokedex
