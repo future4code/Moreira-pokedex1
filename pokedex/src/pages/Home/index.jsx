@@ -42,15 +42,16 @@ export default function Home(){
     return (
         <div>
             <h1>Página Home</h1>
+            
             <HeaderHome />
             
             {pokemons.map (list =>(
-             <> 
-             <p>{list.name}</p>
-             <img src={list.image} alt={list.name} style={{width: '10%'}}/>
-             <button onClick={()=>onClickAdd(list)} >Adicionar</button>
-             <button key={list.id} onClick={()=>onClickPokemon(list.name)}>Detalhes</button>
-             </>
+                <div key={list.name}> 
+                    <p>{list.name}</p>
+                    <img src={list.image} alt={list.name} style={{width: '10%'}}/>
+                    <button onClick={()=>onClickAdd(list)} >Adicionar</button>
+                    <button key={list.id} onClick={()=>onClickPokemon(list.name)}>Detalhes</button>
+                </div>
             ))}
 
 
