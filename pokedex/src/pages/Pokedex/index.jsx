@@ -18,7 +18,7 @@ const Pokedex = () => {
 
     return (
         <div>
-            <h1>Página Pokedex</h1>
+            <h1>Página Pokedex, falta botão detalhes</h1>
             <HeaderPokedex/>
             <Link to="/detalhes">Ir para Detalhes</Link>
             {lista.map (list =>(
