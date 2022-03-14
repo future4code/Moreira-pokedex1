@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Header from "../Header/Header";
+import Header from '../../components/Header/';
 
 const DetalhesDoPokemon= () => {
     const [info, setInfo]= useState([])
@@ -38,7 +38,7 @@ const DetalhesDoPokemon= () => {
     
     return(
         <div>
-            <Header titulo="" button={["Voltar", "Ir para Pokédex"]} path={["/", "/pokedex"]}/>
+            <Header/>
             {informacoes}
         </div>
     )

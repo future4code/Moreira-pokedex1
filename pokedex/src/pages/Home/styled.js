@@ -17,8 +17,6 @@ export const Div = styled.div`
   column-gap: 20px;
   row-gap: 20px;
 
-
-
 `
 
 export const Button = styled.div `
