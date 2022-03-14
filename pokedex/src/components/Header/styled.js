@@ -24,15 +24,16 @@ export const Nav= styled.div`
   justify-content: space-around;
   height:70px;
   width: 100%;
-
+ 
     .icon{
     font-size:1.5em;
-    color: red;
+    color: #386ABB;
   }
 `
 
 export const Button =styled.button`
   position: relative;
+  margin-right: 10px;
   display: flex;
   align-items: center;
   border:none;
@@ -49,10 +50,10 @@ export const Button =styled.button`
   -webkit-transition: all 150ms ease-in-out;
   transition: transform 0.9s;
     :hover {
-      box-shadow: 0 0 4px 0 black inset, 0 0 4px 2px #386ABB;
+      box-shadow: 0 0 4px 0 #386ABB inset, 0 0 4px 2px #386ABB;
     }
     :active{
-      box-shadow: 0 0 4px 0 black inset, 0 0 4px 2px #386ABB;
+      box-shadow: 0 0 4px 0 #386ABB inset, 0 0 4px 2px #386ABB;
       background-color: white;
       color: white;
     }
