@@ -2,18 +2,20 @@ import styled from 'styled-components'
 
 
 export const Div =styled.div`
-
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-content: center;
     justify-content: space-between;
     align-items: center;
+
 `
 
-export const Nav= styled.nav`
-  background-color: black;
-  background: white; 
+
+export const Nav= styled.div`
+  margin: 0;
+  padding: 0;
+  background:  #FFCC03; 
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -25,13 +27,12 @@ export const Nav= styled.nav`
 
     .icon{
     font-size:1.5em;
-    color: red;
+    color: #386ABB;
   }
 `
 
 export const Button =styled.button`
   position: relative;
-
   display: flex;
   align-items: center;
   border:none;
@@ -43,15 +44,15 @@ export const Button =styled.button`
   text-align: center;
   color: black;
   cursor: pointer;
-  background-color: white;
+  background-color:  #FFCC03;
   box-shadow: 0 0 40px 40px transparent inset, 0 0 0 0 #386ABB;
   -webkit-transition: all 150ms ease-in-out;
   transition: transform 0.9s;
     :hover {
-      box-shadow: 0 0 4px 0 black inset, 0 0 4px 2px #386ABB;
+      box-shadow: 0 0 4px 0 #386ABB inset, 0 0 4px 2px #386ABB;
     }
     :active{
-      box-shadow: 0 0 4px 0 black inset, 0 0 4px 2px #386ABB;
+      box-shadow: 0 0 4px 0 #386ABB inset, 0 0 4px 2px #386ABB;
       background-color: white;
       color: white;
     }
@@ -61,5 +62,4 @@ export const Img= styled.img`
  width: 10%;
  margin-right: 70%;
 `
-
 
