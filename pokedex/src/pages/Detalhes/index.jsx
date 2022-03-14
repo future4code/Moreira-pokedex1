@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header";
 import GlobalStateContext from "../../Global/GlobalStateContext";
+import {FotoPokemon, DivPokemon, PageHome, Div} from './styled'
 
 const Detalhes = () => {
 
@@ -17,7 +18,7 @@ const Detalhes = () => {
 
     
     const {name}= useParams ();
-        //console.log(params)
+   
     
     useEffect(() => {
         axios
@@ -41,21 +42,20 @@ const Detalhes = () => {
     
 
     return (
-
-        <div>
-            <h1>Página Detalhes dos Pokemons</h1>
-            <Header />
-            <img src={foto} alt="" style={{width: '50%'}}/>
-            <h1>Nome: {info.name}</h1>
-            <h2>Altura: {info.height} cm</h2>
-            <h2>Peso: {info.weight} g</h2>
-            <h2>Habilidades:</h2>
-            <h3>{habilidade}</h3>
-            <h3>{habilidade2}</h3>
-            <h2>Tipos:</h2>
-            <h3>{type}</h3>
-            <h3>{type2}</h3>
-        </div>
+      <PageHome>
+        <Header />
+        <DivPokemon>
+            <FotoPokemon src={foto} alt="" style={{width: '80%'}}/>
+            <Div>
+            <p><strong>Nome:</strong> {info.name}</p>
+            <p><strong>Altura:</strong> {info.height} cm</p>
+            <p><strong>Peso:</strong> {info.weight} g</p>
+            <p><strong>Habilidades: </strong>{habilidade}, {habilidade2}</p>
+            <p> <strong>Tipos: </strong>{type}, {type2}</p>
+            </Div>
+        </DivPokemon>
+      
+      </PageHome>
     )
 }
 
