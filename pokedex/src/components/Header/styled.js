@@ -24,7 +24,7 @@ export const Nav= styled.div`
   justify-content: space-around;
   height:70px;
   width: 100%;
-
+ 
     .icon{
     font-size:1.5em;
     color: #386ABB;
