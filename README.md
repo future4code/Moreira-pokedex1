@@ -6,7 +6,7 @@ Nome dos integrantes:
 - Eliel
 - Atauan
 
-Link do Surge: www.known-prison.surge.sh
+Link do Surge: https://special-rake.surge.sh/
 
 O que funciona:
 
@@ -17,10 +17,10 @@ O que funciona:
 - Renderização na tela de detalhes da imagem, moves e type do pokemon;
 
 HOME
-![image](https://user-images.githubusercontent.com/94688135/157960748-a27c677a-4d8b-4c96-ac23-d96ddc4ee5f1.png)
+![image](https://user-images.githubusercontent.com/92445126/158218831-3512252f-4766-42ca-bd04-3f5227956c3f.png)
 
 POKEDEX
-![image](https://user-images.githubusercontent.com/94688135/157961245-ed6e692a-8419-4bca-8db5-ea499465ab66.png)
+![image](https://user-images.githubusercontent.com/92445126/158218899-09efe463-dba2-43bd-bc6a-26e4eabfd8b8.png)
 
 DETALHE
-![image](https://user-images.githubusercontent.com/94688135/157961498-3cf804f7-2367-4554-a4e2-1ffa7c10dd8c.png)
+![image](https://user-images.githubusercontent.com/92445126/158218985-4c06c62b-ddd6-49b8-bf05-d44dfab19f7c.png)
