@@ -23,4 +23,4 @@ POKEDEX
 ![image](https://user-images.githubusercontent.com/92445126/158218899-09efe463-dba2-43bd-bc6a-26e4eabfd8b8.png)
 
 DETALHE
-![image](https://user-images.githubusercontent.com/92445126/158218985-4c06c62b-ddd6-49b8-bf05-d44dfab19f7c.png)
+![image](https://user-images.githubusercontent.com/92445126/158219118-f2ae7542-3493-4438-9ad4-d7cccecd68ad.png)
